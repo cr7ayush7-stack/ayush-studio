@@ -408,7 +408,7 @@ export default function Work() {
       min-height: 400px !important;
     }
     .project-image-wrapper {
-      height: 220px !important;
+      height: 280px !important;
     }
   }
 `}</style>
