@@ -196,7 +196,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     position: 'relative',
     zIndex: 2,
     margin: '1.5rem 0',
-    height: isFeatured ? '260px' : '180px',
+    height: isFeatured ? '400px' : '180px',
     borderRadius: '12px',
     overflow: 'hidden',
     border: '1px solid var(--bg-border)',
