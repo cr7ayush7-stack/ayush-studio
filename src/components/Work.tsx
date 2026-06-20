@@ -191,6 +191,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       {/* Project image */}
 <div
+  className="project-image-wrapper"
   style={{
     position: 'relative',
     zIndex: 2,
@@ -397,17 +398,20 @@ export default function Work() {
 
       {/* Mobile responsiveness */}
       <style>{`
-        @media (max-width: 768px) {
-          .work-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .work-grid > a {
-            grid-column: span 1 !important;
-            grid-row: span 1 !important;
-            min-height: 400px !important;
-          }
-        }
-      `}</style>
+  @media (max-width: 768px) {
+    .work-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .work-grid > a {
+      grid-column: span 1 !important;
+      grid-row: span 1 !important;
+      min-height: 400px !important;
+    }
+    .project-image-wrapper {
+      height: 220px !important;
+    }
+  }
+`}</style>
     </section>
   )
 }
