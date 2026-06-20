@@ -397,20 +397,30 @@ export default function Work() {
       </div>
 
       {/* Mobile responsiveness */}
-     <style>{`
+    <style>{`
   @media (max-width: 768px) {
     .work-grid {
       grid-template-columns: 1fr !important;
+      gap: 1rem !important;
     }
     .work-grid > a {
       grid-column: span 1 !important;
       grid-row: span 1 !important;
-      min-height: 400px !important;
+      min-height: auto !important;
+      padding: 1.25rem !important;
     }
     .project-image-wrapper {
-      height: 280px !important;
+      height: 200px !important;
+      margin: 1rem 0 !important;
     }
-  }
+    <section
+  id="work"
+  className="work-section"
+  style={{
+    padding: '8rem 2rem',
+    position: 'relative',
+  }}
+>
 `}</style>
     </section>
   )
