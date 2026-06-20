@@ -195,11 +195,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   style={{
     position: 'relative',
     zIndex: 2,
-    margin: '1.5rem 0',
-    height: isFeatured ? '400px' : '180px',
-    borderRadius: '12px',
+    marginTop: '1.5rem',
+    marginBottom: '1.5rem',
+    marginLeft: isFeatured ? '-3rem' : '-2rem',
+    marginRight: isFeatured ? '-3rem' : '-2rem',
+    height: isFeatured ? '400px' : '220px',
     overflow: 'hidden',
-    border: '1px solid var(--bg-border)',
+    borderTop: '1px solid var(--bg-border)',
+    borderBottom: '1px solid var(--bg-border)',
   }}
 >
   <motion.img
@@ -406,9 +409,12 @@ export default function Work() {
       grid-column: span 1 !important;
       grid-row: span 1 !important;
       min-height: 400px !important;
+      padding: 2rem !important;
     }
     .project-image-wrapper {
-      height: 280px !important;
+      height: 320px !important;
+      margin-left: -2rem !important;
+      margin-right: -2rem !important;
     }
   }
 `}</style>
