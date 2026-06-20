@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colour tokens */
+:root {
+  --bg-primary:    #0d0a14;
+  --bg-surface:    #111018;
+  --bg-border:     #1e1a2e;
+  --text-primary:  #F5F0E8;
+  --text-muted:    #9b8fa8;
+  --accent-violet: #8B5CF6;
+  --accent-lime:   #CCFF00;
+  --font-display:  'Syne', sans-serif;
+  --font-body:     'Space Grotesk', sans-serif;
+  --font-mono:     'Space Mono', monospace;
+  --font-ui:       'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+/* Hide default cursor — we use custom one */
+*, *:hover {
+  cursor: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-violet);
+}
+
+/* Selection colour */
+::selection {
+  background: var(--accent-violet);
+  color: var(--bg-primary);
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.3);
+  }
+}
