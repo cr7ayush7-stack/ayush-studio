@@ -2,31 +2,40 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight, Mail } from 'lucide-react'
 import { useState } from 'react'
 
-// Custom Instagram icon
-const InstagramIcon = ({ size = 16, strokeWidth = 2 }: { size?: number; strokeWidth?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={strokeWidth}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+type IconProps = { size?: number; strokeWidth?: number }
+
+const LinkedInIcon = ({ size = 16, strokeWidth = 2 }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+)
+
+const InstagramIcon = ({ size = 16, strokeWidth = 2 }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
   </svg>
 )
 
+const TwitterIcon = ({ size = 16 }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+)
+
 type SocialItem = {
   name: string
-  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>
+  icon: React.ComponentType<IconProps>
   href: string
 }
 
 const socials: SocialItem[] = [
+  { name: 'LinkedIn', icon: LinkedInIcon, href: 'https://linkedin.com/in/ayush-hariharan-74b381418' },
+  { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com/YOUR-IG-USERNAME' },
+  { name: 'Twitter', icon: TwitterIcon, href: 'https://x.com/YOUR-X-USERNAME' },
   { name: 'Email', icon: Mail, href: 'mailto:cr7ayush7@gmail.com' },
 ]
 
@@ -44,6 +53,7 @@ const footerLinks = [
     links: [
       { name: 'Book a Call', href: 'https://calendly.com/cr7ayush7/30min' },
       { name: 'Email Us', href: 'mailto:cr7ayush7@gmail.com' },
+      { name: 'LinkedIn', href: 'https://linkedin.com/in/ayush-hariharan-74b381418' },
       
     ],
   },
