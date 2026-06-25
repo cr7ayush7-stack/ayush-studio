@@ -107,19 +107,23 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
           }}
         >
           <span
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '4rem',
-              fontWeight: 700,
-              color: 'transparent',
-              WebkitTextStroke: isHovered ? '1.5px #CCFF00' : '1.5px var(--bg-border)',
-              letterSpacing: '-0.04em',
-              lineHeight: 1,
-              transition: 'all 0.3s ease',
-            }}
-          >
-            {service.number}
-          </span>
+  className="service-number"
+  style={{
+    fontFamily: 'var(--font-display)',
+    fontSize: '4rem',
+    fontWeight: 700,
+    color: 'transparent',
+    WebkitTextStroke: isHovered ? '1.5px #CCFF00' : '1.5px var(--bg-border)',
+    letterSpacing: '-0.04em',
+    lineHeight: 1,
+    transition: 'all 0.3s ease',
+    textShadow: isHovered 
+      ? '0 0 20px rgba(204, 255, 0, 0.6)' 
+      : 'none',
+  }}
+>
+  {service.number}
+</span>
 
           <span
             style={{
@@ -557,17 +561,25 @@ export default function Services() {
 
       {/* Mobile responsiveness */}
       <style>{`
-        @media (max-width: 1200px) {
-          .services-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 640px) {
-          .services-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 640px) {
+    .services-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  /* Mobile: Make numbers glow lime by default (no hover on touch) */
+  @media (max-width: 768px) {
+    .service-number {
+      -webkit-text-stroke: 1.5px #CCFF00 !important;
+      text-shadow: 0 0 15px rgba(204, 255, 0, 0.5) !important;
+    }
+  }
+`}</style>
     </section>
   )
 }
