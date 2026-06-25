@@ -141,7 +141,7 @@ function AbstractVisual() {
             letterSpacing: '-0.05em',
           }}
         >
-          AS
+          CL
         </motion.div>
       </motion.div>
 
@@ -288,7 +288,7 @@ export default function About() {
             >
               I'm <span style={{ color: 'var(--text-primary)' }}>Ayush</span> — a Mumbai-based
               developer and designer who went from using AI website builders to shipping
-              production-grade React apps for real clients. I now run Ayush Studio with my
+              production-grade React apps for real clients. I now run Cofii Labs with my
               partner, a product designer and 3D modeller.
             </p>
 

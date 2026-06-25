@@ -24,7 +24,7 @@ const services: Service[] = [
       'Lead capture + Calendly integration',
       'Basic SEO + analytics setup',
     ],
-    startingFrom: '$600',
+    startingFrom: '₹15,000',
   },
   {
     number: '02',
@@ -38,7 +38,7 @@ const services: Service[] = [
       'CMS integration (optional)',
       'Performance + SEO optimization',
     ],
-    startingFrom: '$1,800',
+    startingFrom: '₹ 20,000',
   },
   {
     number: '03',
@@ -52,7 +52,7 @@ const services: Service[] = [
       'Admin dashboard + role management',
       'Full deployment + handover',
     ],
-    startingFrom: '$3,500',
+    startingFrom: '₹40,000',
   },
 ]
 

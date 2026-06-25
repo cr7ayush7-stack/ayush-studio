@@ -20,11 +20,6 @@ const InstagramIcon = ({ size = 16, strokeWidth = 2 }: IconProps) => (
   </svg>
 )
 
-const TwitterIcon = ({ size = 16 }: IconProps) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-)
 
 type SocialItem = {
   name: string
@@ -35,7 +30,6 @@ type SocialItem = {
 const socials: SocialItem[] = [
   { name: 'LinkedIn', icon: LinkedInIcon, href: 'https://linkedin.com/in/ayush-hariharan-74b381418' },
   { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com/YOUR-IG-USERNAME' },
-  { name: 'Twitter', icon: TwitterIcon, href: 'https://x.com/YOUR-X-USERNAME' },
   { name: 'Email', icon: Mail, href: 'mailto:cr7ayush7@gmail.com' },
 ]
 
@@ -284,7 +278,7 @@ export default function Footer() {
                 marginBottom: '1.5rem',
               }}
             >
-              ayush<span style={{ color: 'var(--accent-lime)' }}>.</span>studio
+              Cofii<span style={{ color: 'var(--accent-lime)' }}>.</span>Labs
             </a>
 
             <p
@@ -429,7 +423,7 @@ export default function Footer() {
               letterSpacing: '0.1em',
             }}
           >
-            © {currentYear} AYUSH.STUDIO — ALL RIGHTS RESERVED
+            © {currentYear} COFII.LABS — ALL RIGHTS RESERVED
           </div>
         </div>
       </div>

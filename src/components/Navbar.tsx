@@ -70,7 +70,7 @@ export default function Navbar() {
               position: 'relative',
             }}
           >
-            ayush<span style={{ color: 'var(--accent-lime)' }}>.</span>studio
+            Cofii<span style={{ color: 'var(--accent-lime)' }}>.</span>Labs
           </a>
 
           {/* Desktop nav */}
