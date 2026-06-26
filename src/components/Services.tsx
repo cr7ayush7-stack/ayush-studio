@@ -38,7 +38,7 @@ const services: Service[] = [
       'CMS integration (optional)',
       'Performance + SEO optimization',
     ],
-    startingFrom: '₹ 20,000',
+    startingFrom: '₹ 25,000',
   },
   {
     number: '03',
@@ -52,7 +52,7 @@ const services: Service[] = [
       'Admin dashboard + role management',
       'Full deployment + handover',
     ],
-    startingFrom: '₹40,000',
+    startingFrom: '₹45,000',
   },
 ]
 
