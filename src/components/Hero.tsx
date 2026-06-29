@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowDown } from 'lucide-react'
 
 export default function Hero() {
   // Headline split into words for stagger animation
-  const headlineWords = ['We', 'Build', 'Digital', 'Experiences']
+  const headlineWords = ['Design +', 'React builds.', 'Fast', 'Production ready']
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,7 +110,7 @@ export default function Hero() {
               letterSpacing: '0.15em',
             }}
           >
-            Creative Studio — Est. 2025
+            Founder-led studio (Ayush & team)
           </span>
         </motion.div>
 
