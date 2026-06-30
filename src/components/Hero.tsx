@@ -101,7 +101,7 @@ export default function Hero() {
                 letterSpacing: '0.15em',
               }}
             >
-              Creative Studio — Est. 2025
+              Founder-led studio (Ayush + team)
             </span>
           </motion.div>
 
