@@ -294,10 +294,11 @@ function TalkCard({ index }: { index: number }) {
 
   return (
     <motion.a
-      href="https://calendly.com/cr7ayush7/30min"
-      target="_blank"
-      rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 60 }}
+  href="https://calendly.com/cr7ayush7/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  data-cursor="book"
+  initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}

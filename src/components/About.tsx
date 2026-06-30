@@ -256,56 +256,72 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h2
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.03em',
-                lineHeight: 1.05,
-                marginBottom: '2rem',
-              }}
-            >
-              A studio {' '}
-              <span
-                style={{
-                  color: 'transparent',
-                  WebkitTextStroke: '2px var(--text-primary)',
-                }}
-              >
-              </span>
-              obsessed with the details.
-            </h2>
+  style={{
+    fontFamily: 'var(--font-display)',
+    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+    fontWeight: 700,
+    letterSpacing: '-0.03em',
+    lineHeight: 1.05,
+    marginBottom: '2rem',
+  }}
+>
+  Premium sites for founders who{' '}
+  <span
+    style={{
+      color: 'transparent',
+      WebkitTextStroke: '2px var(--text-primary)',
+    }}
+  >
+    actually
+  </span>{' '}
+  care.
+</h2>
 
             <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1.05rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.7,
-                marginBottom: '1.5rem',
-                maxWidth: '540px',
-              }}
-            >
-              I'm <span style={{ color: 'var(--text-primary)' }}>Ayush</span> — a Mumbai-based
-              developer and designer who went from using AI website builders to shipping
-              production-grade React apps for real clients. I now run Cofii Labs with my
-              partner, a product designer and 3D modeller.
-            </p>
+  style={{
+    fontFamily: 'var(--font-body)',
+    fontSize: '1.05rem',
+    color: 'var(--text-muted)',
+    lineHeight: 1.7,
+    marginBottom: '1.5rem',
+    maxWidth: '540px',
+  }}
+>
+  I'm <span style={{ color: 'var(--text-primary)' }}>Ayush</span> — designer + developer
+  running Cofii.Labs, a small studio based in Mumbai. I've always believed that great
+  websites do more than just look pretty — they help businesses grow.
+</p>
 
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1.05rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.7,
-                marginBottom: '3rem',
-                maxWidth: '540px',
-              }}
-            >
-              We work small, ship fast, and care deeply about the craft. No bloated agencies,
-              no template builders, no surprises — just clean design and code, delivered with{' '}
-              <span style={{ color: 'var(--accent-lime)' }}>intention</span>.
-            </p>
+<p
+  style={{
+    fontFamily: 'var(--font-body)',
+    fontSize: '1.05rem',
+    color: 'var(--text-muted)',
+    lineHeight: 1.7,
+    marginBottom: '1.5rem',
+    maxWidth: '540px',
+  }}
+>
+  We work with startups, local brands, and global founders who want premium digital
+  experiences without the bloated agency timelines or template fatigue. Every site is
+  hand-crafted, performance-first, and shipped on time — every time.
+</p>
+
+<p
+  style={{
+    fontFamily: 'var(--font-body)',
+    fontSize: '1.05rem',
+    color: 'var(--text-muted)',
+    lineHeight: 1.7,
+    marginBottom: '3rem',
+    maxWidth: '540px',
+  }}
+>
+  No AI-generated layouts. No "we'll get back to you next month." Just clean design,
+  real code, and work we're <span style={{ color: 'var(--accent-lime)' }}>proud</span> of.
+</p>
+
+            
 
             {/* Principles */}
             <div style={{ marginBottom: '3rem' }}>

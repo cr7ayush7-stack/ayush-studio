@@ -161,18 +161,19 @@ export default function Footer() {
           </h2>
 
           <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
-              color: 'var(--text-muted)',
-              maxWidth: '560px',
-              lineHeight: 1.6,
-              marginBottom: '3rem',
-            }}
-          >
-            Got a project in mind? A weird idea? A site that needs a rebuild? Hop on a quick
-            call — no pressure, no pitch, just a real conversation.
-          </p>
+  style={{
+    fontFamily: 'var(--font-body)',
+    fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
+    color: 'var(--text-muted)',
+    maxWidth: '560px',
+    lineHeight: 1.6,
+    marginBottom: '3rem',
+  }}
+>
+  Got a project? Whether it's a landing page that needs to convert, a full website
+  rebuild, or a dashboard for your team — we'd love to hear about it. No pressure,
+  no hard sell, just a real conversation.
+</p>
 
           <div
             style={{
@@ -183,10 +184,11 @@ export default function Footer() {
             }}
           >
             <motion.a
-              href="https://calendly.com/cr7ayush7/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => setCtaHovered(true)}
+  href="https://calendly.com/cr7ayush7/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  data-cursor="book"
+  onMouseEnter={() => setCtaHovered(true)}
               onMouseLeave={() => setCtaHovered(false)}
               whileHover={{ scale: 1.04 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}

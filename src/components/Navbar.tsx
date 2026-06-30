@@ -84,7 +84,7 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a href="https://calendly.com/cr7ayush7/30min" target="_blank" rel="noopener noreferrer" className="nav-cta">
+            <a href="https://calendly.com/cr7ayush7/30min" target="_blank" rel="noopener noreferrer" className="nav-cta" data-cursor="book">
               Book a Call ↗
             </a>
           </div>

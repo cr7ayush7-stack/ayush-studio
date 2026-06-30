@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+
+type CursorVariant = 'default' | 'view' | 'book' | 'link'
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isHovering, setIsHovering] = useState(false)
+  const [variant, setVariant] = useState<CursorVariant>('default')
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Detect if touch device — hide cursor on mobile
     const isTouchDevice = 'ontouchstart' in window
     if (isTouchDevice) return
 
@@ -18,19 +19,27 @@ export default function CustomCursor() {
 
     const handleMouseLeave = () => setIsVisible(false)
 
-    // Detect hover on interactive elements
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement
+
+      // Check for data-cursor attribute
+      const cursorEl = target.closest('[data-cursor]') as HTMLElement
+      if (cursorEl) {
+        const cursorType = cursorEl.getAttribute('data-cursor') as CursorVariant
+        setVariant(cursorType || 'default')
+        return
+      }
+
+      // Default link/button behavior
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.closest('a') ||
-        target.closest('button') ||
-        target.getAttribute('data-hover') === 'true'
+        target.closest('button')
       ) {
-        setIsHovering(true)
+        setVariant('link')
       } else {
-        setIsHovering(false)
+        setVariant('default')
       }
     }
 
@@ -45,14 +54,16 @@ export default function CustomCursor() {
     }
   }, [])
 
-  // Don't render on touch devices
   if (typeof window !== 'undefined' && 'ontouchstart' in window) {
     return null
   }
 
+  // Cursor sizes/styles for each variant
+  const isExpanded = variant === 'view' || variant === 'book' || variant === 'link'
+
   return (
     <>
-      {/* Small dot — follows mouse exactly */}
+      {/* Small dot */}
       <motion.div
         style={{
           position: 'fixed',
@@ -69,33 +80,81 @@ export default function CustomCursor() {
         animate={{
           x: position.x - 4,
           y: position.y - 4,
-          scale: isHovering ? 0 : 1,
+          scale: isExpanded ? 0 : 1,
         }}
         transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.3 }}
       />
 
-      {/* Larger circle — lags behind smoothly */}
+      {/* Larger circle / text bubble */}
       <motion.div
         style={{
           position: 'fixed',
           top: 0,
           left: 0,
-          width: '36px',
-          height: '36px',
-          borderRadius: '50%',
-          border: '1.5px solid var(--accent-violet)',
           pointerEvents: 'none',
           zIndex: 9998,
           opacity: isVisible ? 1 : 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.65rem',
+          fontWeight: 700,
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          color: 'var(--bg-primary)',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
         }}
         animate={{
-          x: position.x - 18,
-          y: position.y - 18,
-          scale: isHovering ? 1.8 : 1,
-          backgroundColor: isHovering ? 'rgba(139, 92, 246, 0.15)' : 'rgba(139, 92, 246, 0)',
+          x: position.x - (variant === 'view' || variant === 'book' ? 50 : 18),
+          y: position.y - (variant === 'view' || variant === 'book' ? 22 : 18),
+          width: variant === 'view' || variant === 'book' ? '100px' : '36px',
+          height: variant === 'view' || variant === 'book' ? '44px' : '36px',
+          borderRadius: variant === 'view' || variant === 'book' ? '999px' : '50%',
+          backgroundColor:
+            variant === 'view'
+              ? 'var(--accent-lime)'
+              : variant === 'book'
+              ? 'var(--accent-lime)'
+              : variant === 'link'
+              ? 'rgba(139, 92, 246, 0.15)'
+              : 'transparent',
+          borderWidth: '1.5px',
+          borderStyle: 'solid',
+          borderColor:
+            variant === 'view' || variant === 'book'
+              ? 'var(--accent-lime)'
+              : 'var(--accent-violet)',
+          scale: variant === 'link' ? 1.5 : 1,
         }}
         transition={{ type: 'spring', stiffness: 200, damping: 20, mass: 0.5 }}
-      />
+      >
+        <AnimatePresence mode="wait">
+          {variant === 'view' && (
+            <motion.span
+              key="view"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+            >
+              VIEW ↗
+            </motion.span>
+          )}
+          {variant === 'book' && (
+            <motion.span
+              key="book"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+            >
+              BOOK ↗
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </>
   )
 }
