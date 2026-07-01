@@ -386,7 +386,7 @@ export default function Constellation() {
             {isMobile ? (
   <>Stars cycling through <span style={{ color: 'var(--accent-lime)' }}>capabilities</span></>
 ) : (
-  <>Hover the stars to <span style={{ color: 'var(--accent-lime)' }}>explore</span></>
+  <>Hover over the stars to <span style={{ color: 'var(--accent-lime)' }}>explore</span></>
 )}
           </p>
         </motion.div>
